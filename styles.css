@@ -14,7 +14,6 @@ body {
 header {
     background-color: #fff;
     padding: 15px;
-    border-bottom: 1px solid #ffffff;
 }
 
 .nav-container {
@@ -30,16 +29,27 @@ header {
     font-weight: bold;
 }
 
-nav ul {
-    list-style-type: none;
+.nav-links {
     display: flex;
-    gap: 20px;
+    justify-content: center; /* Center the navigation links */
+    flex-grow: 1; /* Allow this section to grow and take available space */
 }
 
-nav a {
+.nav-links ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px; /* Space between navigation items */
+}
+
+.nav-links a {
     text-decoration: none;
     color: #333;
     font-size: 16px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center; /* Align icons vertically */
 }
 
 .nav-icons a {
@@ -130,5 +140,3 @@ nav a {
     font-size: 16px;
     font-weight: bold;
 }
-.hero 
-
