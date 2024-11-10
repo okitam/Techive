@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
         if (username && password) {
             
-            window.location.href = 'products.html';
+            window.location.href = 'home.html';
         } else {
             alert('Please enter both username and password');
         }

@@ -15,10 +15,9 @@
         <div class="nav-links">
             <a href="#">SHOP ALL</a>
             <a href="#">LAPTOP</a>
-            <a href="#">DESKTOP PC</a>
-            <a href="#">MOBILE PHONE</a>
-            <a href="#">BRANDS</a>
-            <a href="#">ABOUT US</a>
+            <a href="#">DESKTOP</a>
+            <a href="#">SMARTPHONE</a>
+            <a href="#">BRANDS</a>           
         </div>
         <div class="nav-icons">
             <a href="#"><i class="fas fa-search"></i></a>
@@ -32,12 +31,12 @@
         <form id="loginForm">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter...">
+                <input type="email" id="email" placeholder="Enter email address" required>
             </div>
             
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter...">
+                <input type="password" id="password" placeholder="Enter password" required>
             </div>
 
             <button type="submit" class="sign-in-btn">SIGN IN</button>
@@ -49,12 +48,21 @@
         </div>
     </div>
 
+    <div id="footer-placeholder"></div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            window.location.href = 'products.html';
+            window.location.href = 'home.html'; // Change this to your desired redirect page
         });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
     </script>
 </body>
 </html>

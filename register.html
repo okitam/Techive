@@ -16,7 +16,7 @@
             <a href="#">SHOP ALL</a>
             <a href="#">LAPTOP</a>
             <a href="#">DESKTOP</a>
-            <a href="#">MOBILE PHONE/a>
+            <a href="#">MOBILE PHONE</a>
             <a href="#">BRANDS</a>
             <a href="#">ABOUT US</a>
         </div>
@@ -45,39 +45,4 @@
                 <input type="email" placeholder="Email" required>
             </div>
 
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" placeholder="Password" required>
-            </div>
-
-            <div class="terms-checkbox">
-                <input type="checkbox" id="terms">
-                <label for="terms">I have read and agreed to TECHIVE's Terms and Conditions</label>
-                <div id="termsError" class="error-message">Double check Terms and Conditions</div>
-            </div>
-
-            <button type="submit" class="create-btn">CREATE</button>
-        </form>
-
-        <div class="form-footer">
-            <a href="index.html">Login</a>
-            <a href="index.html">Return to Store</a>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const termsCheckbox = document.getElementById('terms');
-            const termsError = document.getElementById('termsError');
-            
-            if(termsCheckbox.checked) {
-                termsError.style.display = 'none';
-                window.location.href = 'products.html';
-            } else {
-                termsError.style.display = 'block';
-            }
-        });
-    </script>
-</body>
-</html>
+            <div class
