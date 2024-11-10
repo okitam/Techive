@@ -30,7 +30,12 @@ body {
 .nav-links a {
     text-decoration: none;
     color: black;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 .nav-icons {

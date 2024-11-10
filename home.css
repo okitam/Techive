@@ -34,12 +34,13 @@ body {
 .nav-links a {
     text-decoration: none;
     color: black;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s;
+    font-size: 13px;
 }
 
 .nav-links a:hover {
-    color: #666;
+    text-decoration: underline;
 }
 
 .nav-icons {

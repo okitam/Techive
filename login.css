@@ -30,7 +30,12 @@ body {
 .nav-links a {
     text-decoration: none;
     color: black;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
 
 .nav-icons {
@@ -50,8 +55,8 @@ body {
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: left;
+    margin-bottom: 15px;
     font-size: 24px;
     color: #000;
 }
@@ -86,7 +91,7 @@ input::placeholder {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 1px;
     transition: background-color 0.3s;
 }
 
