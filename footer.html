@@ -1,62 +1,100 @@
-<!-- footer.html -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-links">
-            <a href="#">ABOUT US</a>
-            <a href="#">PRIVACY POLICY</a>
-            <a href="#">TERMS OF SERVICE</a>
-        </div>
-        <div class="footer-social">
-            <h4>Follow Us</h4>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <div class="footer-info">
-            <h4>Contact Info</h4>
-            <p>Email: support@techive.com</p>
-            <p>Phone: +1 234 567 890</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2023 TECHIVE. All rights reserved.</p>
-    </div>
-</footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        footer {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-<style>
-    footer {
-        background-color: #000000;
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
-    }
-    .footer-container {
-        display: flex;
-        justify-content: space-around;
-        padding: 20px;
-    }
-    .footer-links, .footer-social, .footer-info {
-        flex: 1;
-        margin: 0 20px;
-    }
-    .footer-links a, .footer-social a {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        margin: 5px 0;
-        font-size: 12px;
-        font-weight: bold;
-        text-align: left;
-        margin: 25px 0;
-    }
-    .footer-links a:hover {
-        text-decoration: underline;
-    }
-    .footer-social a {
-        font-size: 20px;
-    }
-    .footer-bottom {
-        margin-top: 20px;
-    }
-</style>
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        .footer-links, .footer-social, .footer-info {
+            flex: 1;
+            margin: 10px; /* Adjust margin for better spacing */
+        }
+
+        .footer-links a, .footer-social a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            font-size: 14px; /* Slightly larger font size */
+            font-weight: bold;
+            transition: color 0.3s; /* Add transition for hover effect */
+        }
+
+        .footer-links a:hover, .footer-social a:hover {
+            color: #ddd; /* Change color on hover */
+            text-decoration: underline;
+        }
+
+        .footer-social h4 {
+            margin-bottom: 10px; /* Add spacing above the heading */
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center; /* Center social icons */
+            gap: 15px; /* Space between icons */
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #444; /* Add a top border for separation */
+            padding-top: 10px; /* Add padding above the text */
+        }
+
+        .footer-bottom p {
+            margin: 0; /* Remove margin for cleaner look */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column; /* Stack items vertically on small screens */
+                align-items: center; /* Center items */
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">ABOUT US</a>
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS OF SERVICE</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h4>Contact Info</h4>
+                <p>Email: support@techive.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 TECHIVE. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
