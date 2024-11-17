@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - TECHIVE</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -14,78 +15,198 @@
         </div>
         <div class="nav-links">
             <a href="#">HOME</a>
-            <a href="#">LAPTOP</a>
-            <a href="#">DESKTOP</a>
-            <a href="#">SMARTPHONE</a>
+            <div class="dropdown"><a href="" class="dropdown-trigger">LAPTOP</a>
+        <div class="dropdown-content">
+            <a href="#">Acer</a>
+            <a href="#">Asus</a>
+            <a href="#">Gigabyte</a>
+            <a href="#">HP</a>
+            <a href="#">Predator</a>
+            <a href="#">Legion</a>
+            <a href="#">Lenovo</a>
+            <a href="#">MSI</a>
+        </div>
+    </div>
+    <div class="dropdown"><a href="" class="dropdown-trigger">DESKTOP</a>
+        <div class="dropdown-content">
+            <a href="#">Processor</a>
+            <a href="#">Mother Board</a>
+            <a href="#">Graphics Card</a>
+            <a href="#">Memory</a>
+            <a href="#">Hard Disk Drive (HDD)</a>
+            <a href="#">Solid State Drive (SDD)</a>
+            <a href="#">Power Supply</a>
+            <a href="#">Monitor</a>
+            <a href="#">Casing</a>
+        </div>
+    </div>
+    <div class="dropdown"><a href="" class="dropdown-trigger">SMARTPHONES</a>
+        <div class="dropdown-content">
+            <a href="#">IPhones</a>
+            <a href="#">Samsung</a>
+            <a href="#">Asus</a>
+            <a href="#">POCO</a>
+            <a href="#">Real me</a>
+            <a href="#">Xiaomi</a>
+            <a href="#">Huawei</a>
+            <a href="#">Techno</a>
+            <a href="#">Infinix</a>
+            <a href="#">Honor</a>
+            <a href="#">All Smartphones</a>
+        </div>
+    </div>
             <a href="#">BRANDS</a>
         </div>
         <div class="nav-icons">
-            <a href="#"><i class="fas fa-search"></i></a>
-            <a href="#" class="cart-icon">
+            <a href="#" onclick="toggleSearch(event)"><i class="fas fa-search"></i></a>
+            <a href="#" class="cart-icon" onclick="toggleCart(event)">
                 <i class="fas fa-shopping-cart"></i>
-                <div class="cart-dropdown" id="cartDropdown">
-                    <p id="cartMessage">No items added in cart</p>
-                </div>
+                <span class="cart-counter" id="cartCounter">0</span>
             </a>
             <a href="#"><i class="fas fa-user"></i></a>
         </div>
     </nav>
 
+    <!---- Search Overlay -->
+   
+<div class="search-popup" id="searchOverlay">
+    <div class="search-container">
+        <div class="search-input-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search" id="searchInput" autofocus>
+        </div>
+        <button class="close-search" onclick="toggleSearch()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-items" id="cartItemsList">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">₱0.00</span>
+                </div>
+                <button class="checkout-btn" onclick="goToCheckout()">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+
     <div class="products-container">
-        <!-- Example product cards -->
+        <!-- Product 1 -->
         <div class="product-card">
-            <img src="product1.jpg" alt="Product 1">
+            <img src="laptop1.jpg" alt="Laptop 1">
             <div class="product-info">
-                <span class="brand">Brand 1</span>
-                <h3>Product 1</h3>
-                <p class="price">$100</p>
-                <button onclick="addItemToCart('Product 1')">Add to Cart</button>
+                <span class="brand">Apple</span>
+                <h3>MacBook Pro M2</h3>
+                <p class="price">₱89,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'MacBook Pro M2',
+                    price: '89990.00',
+                    size: '14-inch',
+                    image: 'laptop1.jpg'
+                })">Add to Cart</button>
             </div>
         </div>
         <div class="product-card">
-            <img src="product2.jpg" alt="Product 2">
+            <img src="laptop1.jpg" alt="Laptop 1">
             <div class="product-info">
-                <span class="brand">Brand 2</span>
-                <h3>Product 2</h3>
-                <p class="price">$200</p>
-                <button onclick="addItemToCart('Product 2')">Add to Cart</button>
+                <span class="brand">Apple</span>
+                <h3>MacBook Pro M2</h3>
+                <p class="price">₱89,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'MacBook Pro M2',
+                    price: '89990.00',
+                    size: '14-inch',
+                    image: 'laptop1.jpg'
+                })">Add to Cart</button>
             </div>
         </div>
-        <!-- Add more product cards as needed -->
+        <div class="product-card">
+            <img src="laptop1.jpg" alt="Laptop 1">
+            <div class="product-info">
+                <span class="brand">Apple</span>
+                <h3>MacBook Pro M2</h3>
+                <p class="price">₱89,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'MacBook Pro M2',
+                    price: '89990.00',
+                    size: '14-inch',
+                    image: 'laptop1.jpg'
+                })">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="laptop1.jpg" alt="Laptop 1">
+            <div class="product-info">
+                <span class="brand">Apple</span>
+                <h3>MacBook Pro M2</h3>
+                <p class="price">₱89,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'MacBook Pro M2',
+                    price: '89990.00',
+                    size: '14-inch',
+                    image: 'laptop1.jpg'
+                })">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="laptop1.jpg" alt="Laptop 1">
+            <div class="product-info">
+                <span class="brand">Apple</span>
+                <h3>MacBook Pro M2</h3>
+                <p class="price">₱89,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'MacBook Pro M2',
+                    price: '89990.00',
+                    size: '14-inch',
+                    image: 'laptop1.jpg'
+                })">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="laptop1.jpg" alt="Laptop 1">
+            <div class="product-info">
+                <span class="brand">Apple</span>
+                <h3>MacBook Pro M2</h3>
+                <p class="price">₱89,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'MacBook Pro M2',
+                    price: '89990.00',
+                    size: '14-inch',
+                    image: 'laptop1.jpg'
+                })">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="smartphone1.jpg" alt="Smartphone 1">
+            <div class="product-info">
+                <span class="brand">Samsung</span>
+                <h3>Galaxy S24 Ultra</h3>
+                <p class="price">₱79,990.00</p>
+                <button onclick="addItemToCart({
+                    name: 'Galaxy S24 Ultra',
+                    price: '79990.00',
+                    size: '256GB',
+                    image: 'smartphone1.jpg'
+                })">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Add more products as needed -->
     </div>
 
     <div id="footer-placeholder"></div>
 
+    <script src="script.js"></script>
     <script>
-        // Sample cart items array (this should be dynamically managed in a real application)
-        let cartItems = [];
-
-        // Function to update the cart dropdown
-        function updateCartDropdown() {
-            const cartDropdown = document.getElementById('cartDropdown');
-            const cartMessage = document.getElementById('cartMessage');
-
-            // Clear previous content
-            cartDropdown.innerHTML = ''; // Clear the dropdown content
-
-            if (cartItems.length > 0) {
-                // Create a list of items
-                cartItems.forEach(item => {
-                    const itemElement = document.createElement('p');
-                    itemElement.textContent = item; // Assuming item is a string (item name)
-                    cartDropdown.appendChild(itemElement);
-                });
-            } else {
-                cartMessage.textContent = 'No items added in cart'; // Update message
-            }
-        }
-
-        // Example function to add items to the cart (this would be called when items are added)
-        function addItemToCart(item) {
-            cartItems.push(item);
-            updateCartDropdown(); // Update dropdown after adding an item
-        }
-
         // Load footer
         fetch('footer.html')
             .then(response => response.text())

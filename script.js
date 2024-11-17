@@ -1,52 +1,121 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.querySelector('form');
-    
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault(); 
-        
-        
-        const username = document.querySelector('input[type="text"]').value;
-        const password = document.querySelector('input[type="password"]').value;
-        
-      
-        if (username && password) {
-            
-            window.location.href = 'home.html';
-        } else {
-            alert('Please enter both username and password');
-        }
-    });
-});
-
-// Sample cart items array (this should be dynamically managed in a real application)
 let cartItems = [];
 
-// Function to update the cart dropdown
-function updateCartDropdown() {
-    const cartDropdown = document.getElementById('cartDropdown');
-    const cartMessage = document.getElementById('cartMessage');
+// Load cart items from localStorage on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedCart = localStorage.getItem('cartItems');
+    if (savedCart) {
+        cartItems = JSON.parse(savedCart);
+        updateCartDisplay();
+    }
+});
 
-    // Clear previous content
-    cartDropdown.innerHTML = ''; // Clear the dropdown content
-
-    if (cartItems.length > 0) {
-        // Create a list of items
-        cartItems.forEach(item => {
-            const itemElement = document.createElement('p');
-            itemElement.textContent = item; // Assuming item is a string (item name)
-            cartDropdown.appendChild(itemElement);
-        });
-    } else {
-        cartMessage.textContent = 'No items added in cart'; // Update message
+// Updated search functionality
+function toggleSearch(event) {
+    if (event) {
+        event.preventDefault();
+    }
+    
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+    const body = document.body;
+    
+    searchOverlay.classList.toggle('active');
+    body.classList.toggle('search-active');
+    
+    if (searchOverlay.classList.contains('active')) {
+        searchInput.focus();
     }
 }
 
-// Example function to add items to the cart (this would be called when items are added)
-function addItemToCart(item) {
-    cartItems.push(item);
-    updateCartDropdown(); // Update dropdown after adding an item
+// Cart functionality
+function toggleCart(event) {
+    event.preventDefault();
+    const cartModal = document.getElementById('cartModal');
+    cartModal.classList.toggle('active');
 }
 
-// Example usage: Call this function to simulate adding items
-addItemToCart('Nike Zoom LeBron NXXT Gen AMPD EP x FaZe');
-addItemToCart('Air Jordan 4 Retro GS \'Pure Platinum\'');
+function updateCartDisplay() {
+    const cartItemsList = document.getElementById('cartItemsList');
+    const cartCounter = document.getElementById('cartCounter');
+    const cartSubtotal = document.getElementById('cartSubtotal');
+    
+    // Update counter
+    cartCounter.textContent = cartItems.length;
+    cartCounter.style.display = cartItems.length === 0 ? 'none' : 'block';
+    
+    // Update cart items list
+    if (cartItems.length > 0) {
+        let total = 0;
+        cartItemsList.innerHTML = cartItems.map(item => {
+            total += parseFloat(item.price);
+            return `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-size">Size: ${item.size}</div>
+                        <div class="cart-item-price">₱${item.price}</div>
+                    </div>
+                    <button class="remove-item" onclick="removeFromCart('${item.id}')">✕</button>
+                </div>
+            `;
+        }).join('');
+        
+        cartSubtotal.textContent = `₱${total.toFixed(2)}`;
+    } else {
+        cartItemsList.innerHTML = '<p>Your cart is empty</p>';
+        cartSubtotal.textContent = '₱0.00';
+    }
+}
+
+function addItemToCart(item) {
+    cartItems.push({
+        id: Date.now().toString(), // unique identifier
+        ...item
+    });
+    updateCartDisplay();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+function removeFromCart(itemId) {
+    cartItems = cartItems.filter(item => item.id !== itemId);
+    updateCartDisplay();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+function goToCheckout() {
+    window.location.href = 'checkout.html';
+}
+
+// Event Listeners
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const searchOverlay = document.getElementById('searchOverlay');
+        if (searchOverlay.classList.contains('active')) {
+            toggleSearch();
+        }
+    }
+});
+
+document.addEventListener('click', function(event) {
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+    const searchIcon = document.querySelector('.nav-icons .fa-search');
+    
+    if (searchOverlay.classList.contains('active') && 
+        !searchInput.contains(event.target) && 
+        !searchIcon.contains(event.target) &&
+        !event.target.closest('.close-search')) {
+        toggleSearch();
+    }
+});
+
+// Close cart when clicking outside
+document.addEventListener('click', function(event) {
+    const cartModal = document.getElementById('cartModal');
+    const cartIcon = document.querySelector('.cart-icon');
+    
+    if (!cartModal.contains(event.target) && !cartIcon.contains(event.target)) {
+        cartModal.classList.remove('active');
+    }
+});
