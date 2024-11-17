@@ -46,7 +46,7 @@
 
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" placeholder="" required>
+                <input type="text" placeholder="" required>
             </div>
 
             <div class="terms-checkbox">
@@ -71,6 +71,21 @@
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
+
+        // Add this script to handle form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const registerForm = document.getElementById('registerForm');
+            
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+                
+                alert('Your account has been created successfully! You will be redirected to the login page.');
+
+                setTimeout(function() {
+                    window.location.href = 'index.html'; // Change this to your login page URL
+                }, 900);
+            });
+        });
     </script>
 </body>
 </html>
