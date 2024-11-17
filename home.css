@@ -167,3 +167,22 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+.cart-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position it below the cart icon */
+    background-color: white; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    z-index: 1000; /* Make sure it's on top */
+    padding: 10px; /* Padding */
+    width: 200px; /* Width of the dropdown */
+}
+
+.nav-icons .cart-icon {
+    position: relative; /* Position relative for dropdown positioning */
+}
+
+.nav-icons .cart-icon:hover .cart-dropdown {
+    display: block; /* Show dropdown on hover */
+}
