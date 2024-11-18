@@ -31,7 +31,7 @@
 }
 
 .footer-column ul li a:hover {
-    opacity: 0.8;
+    text-decoration: underline;
 }
 
 .newsletter h3 {
