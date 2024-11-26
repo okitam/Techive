@@ -11,87 +11,152 @@
 <body>
     <div class="checkout-container">
         <div class="checkout-left">
+            <!-- Logo -->
             <div class="logo">
-                <img src="path-to-your-logo.png" alt="Logo">
-            </div>
-            
-            <div class="checkout-steps">
-                <div class="step active">Information</div>
-                <div class="step">Shipping</div>
-                <div class="step">Payment</div>
+                <a href="index.html">
+                    <img src="path-to-your-logo.png" alt="TECHIVE Logo">
+                </a>
             </div>
 
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <span>Cart</span> > 
+                <span class="active">Information</span> > 
+                <span>Shipping</span> > 
+                <span>Payment</span>
+            </div>
+
+            <!-- Express Checkout -->
+            <div class="express-checkout">
+                <button class="paypal-button">
+                    <img src="path-to-paypal-logo.png" alt="PayPal">
+                </button>
+                <div class="separator">OR</div>
+            </div>
+
+            <!-- Contact Info -->
             <div class="contact-section">
                 <h3>Contact</h3>
-                <input type="email" placeholder="Email or mobile phone number">
-                <label>
-                    <input type="checkbox">
-                    Email me with news and offers
+                <div class="email-field">
+                    <input type="email" placeholder="Email or mobile phone number" required>
+                </div>
+                <label class="checkbox-container">
+                    <input type="checkbox" name="newsletter">
+                    <span>Email me with news and offers</span>
                 </label>
             </div>
 
-            <div class="delivery-section">
+            <!-- Delivery Method -->
+            <div class="delivery-method">
                 <h3>Delivery method</h3>
-                <div class="delivery-option">
-                    <input type="radio" name="delivery" id="ship">
-                    <label for="ship">Ship</label>
-                </div>
-                <div class="delivery-option">
-                    <input type="radio" name="delivery" id="pickup">
-                    <label for="pickup">Pick up in store</label>
+                <div class="delivery-options">
+                    <label class="delivery-option">
+                        <input type="radio" name="delivery" value="ship" checked>
+                        <span>Ship</span>
+                    </label>
+                    <label class="delivery-option">
+                        <input type="radio" name="delivery" value="pickup">
+                        <span>Pick up in store</span>
+                    </label>
                 </div>
             </div>
 
+            <!-- Shipping Address -->
             <div class="shipping-address">
                 <h3>Shipping address</h3>
-                <select>
-                    <option>Philippines</option>
-                </select>
+                <div class="form-group">
+                    <select id="country" required>
+                        <option value="PH">Philippines</option>
+                    </select>
+                </div>
                 <div class="name-fields">
-                    <input type="text" placeholder="First name">
-                    <input type="text" placeholder="Last name">
+                    <div class="form-group">
+                        <input type="text" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Last name" required>
+                    </div>
                 </div>
-                <input type="text" placeholder="Address">
-                <input type="text" placeholder="Apartment, suite, etc. (optional)">
+                <div class="form-group">
+                    <input type="text" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Apartment, suite, etc. (optional)">
+                </div>
                 <div class="location-fields">
-                    <input type="text" placeholder="Postal code">
-                    <input type="text" placeholder="City">
+                    <div class="form-group">
+                        <input type="text" placeholder="Postal code" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="City" required>
+                    </div>
                 </div>
-                <select>
-                    <option>Region</option>
-                </select>
-                <input type="tel" placeholder="Phone">
+                <div class="form-group">
+                    <select id="region" required>
+                        <option value="">Region</option>
+                        <!-- Add Philippines regions here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone" required>
+                </div>
             </div>
 
+            <!-- Navigation Buttons -->
             <div class="button-group">
-                <a href="#" class="return-cart">← Return to cart</a>
-                <button class="continue-shipping">Continue to shipping</button>
+                <a href="home.html" class="return-link">← Return to cart</a>
+                <button class="continue-button">Continue to shipping</button>
             </div>
         </div>
 
+        <!-- Right Side - Cart Summary -->
         <div class="checkout-right">
-            <div class="cart-items">
+            <div class="cart-items" id="checkoutCartItems">
                 <!-- Cart items will be dynamically inserted here -->
             </div>
-            <div class="discount-code">
-                <input type="text" placeholder="Discount code">
-                <button>Apply</button>
-            </div>
-            <div class="cart-summary">
-                <div class="subtotal">
-                    <span>Subtotal</span>
-                    <span class="price">₱5,485.00</span>
+            
+            <div class="checkout-summary">
+                <div class="discount-section">
+                    <input type="text" placeholder="Discount code">
+                    <button>Apply</button>
                 </div>
-                <div class="shipping">
-                    <span>Shipping</span>
-                    <span>Calculated at next step</span>
-                </div>
-                <div class="total">
-                    <span>Total</span>
-                    <span class="price">₱5,485.00</span>
+                
+                <div class="subtotal-section">
+                    <div class="subtotal-row">
+                        <span>Subtotal • <span id="itemCount">0</span> items</span>
+                        <span id="subtotalAmount">₱0.00</span>
+                    </div>
+                    <div class="shipping-row">
+                        <span>Shipping</span>
+                        <span>Calculated at next step</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Total</span>
+                        <span class="total-amount" id="totalAmount">₱0.00</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Initialize checkout display
+        document.addEventListener('DOMContentLoaded', function() {
+            displayCheckoutItems();
+        });
+    </script>
 </body>
 </html>
