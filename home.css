@@ -547,9 +547,10 @@ body.search-active {
 
 .price {
     color: #000;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     margin: 0;
+    margin-top: -9px;
 }
 
 .add-to-cart-btn {
@@ -561,6 +562,7 @@ body.search-active {
     margin-top: 8px;
     cursor: pointer;
     font-size: 14px;
+    
 }
 
 .add-to-cart-btn:hover {
