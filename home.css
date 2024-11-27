@@ -566,3 +566,11 @@ body.search-active {
 .add-to-cart-btn:hover {
     background: #333;
 }
+
+.topdealstitle {
+    font-size: 27px;
+    margin: 20px;
+    margin-top: 3%;
+    text-align: left;
+    margin-left: 15%;
+}
