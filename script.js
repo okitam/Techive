@@ -280,3 +280,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Image Gallery
+function changeImage(thumbnail) {
+    // Update main image
+    document.getElementById('mainImage').src = thumbnail.src;
+    
+    // Update active thumbnail
+    document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+    });
+    thumbnail.classList.add('active');
+}
+
+// Size Selection
+document.querySelectorAll('.size-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+        button.classList.add('selected');
+    });
+});
+
+// Accordion
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        header.classList.toggle('expanded');
+    });
+});
+
