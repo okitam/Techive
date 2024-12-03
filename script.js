@@ -311,3 +311,11 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     });
 });
 
+document.querySelectorAll('.accordion-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.nextElementSibling; // Get the next sibling (the content div)
+        content.classList.toggle('active'); // Toggle the active class
+        const isActive = content.classList.contains('active');
+        button.querySelector('span').textContent = isActive ? '-' : '+';
+    });
+});

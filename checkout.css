@@ -56,10 +56,11 @@ body {
 
 .paypal-button {
     width: 100%;
-    padding: 12px;
-    background: #ffc439;
-    border: none;
-    border-radius: 4px;
+    height: 10%;
+    padding: 10px;
+    background: #ffffff;
+    border: 1;
+    border-radius: 10px;
     cursor: pointer;
 }
 

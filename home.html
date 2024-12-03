@@ -83,23 +83,32 @@
 </div>
 
     <!-- Cart Modal -->
-    <div id="cartModal" class="cart-modal">
-        <div class="cart-content">
-            <div class="cart-items" id="cartItemsList">
-                <!-- Cart items will be inserted here -->
+
+<div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+           
+        </div>
+        <div class="cart-summary">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">₱0.00</span>
             </div>
-            <div class="cart-summary">
-                <div class="subtotal">
-                    <span>Subtotal</span>
-                    <span id="cartSubtotal">₱0.00</span>
-                </div>
-                <button class="checkout-btn" onclick="goToCheckout()">CHECKOUT</button>
-            </div>
+            <button class="checkout-btn" onclick="goToCheckout()">CHECKOUT</button>
         </div>
     </div>
+</div>
 
-    <h2 class="banner-title">IPHONE 16</h2>
-    <p class="tagline">IT'S GLOWTIME</p>
+
+
+    <h2 class="banner-title">TECHIVE</h2>
+    <p class="tagline">Fueling your tech passion</p>
 
     <div class="banner">
         <a href="product-detail.html" class="buy-now-btn">BUY NOW</a>
@@ -114,7 +123,7 @@
     <div class="products-container">
         <!-- Product 1 -->
         <div class="product-card">
-            <a href="macbook.html" class="product-link">
+            <a href="asus.html" class="product-link">
                 <img src="img and vids/asus tuf.jpg" alt="Air Jordan 3 Retro Black Cement">
                 <div class="product-info">
                     <span class="brand">ASUS</span>
@@ -127,7 +136,7 @@
     
         <!-- Product 2 -->
         <div class="product-card">
-            <a href="jordan3-black-cement.html" class="product-link">
+            <a href="acer.html" class="product-link">
                 <img src="img and vids/aspire3.jpg" alt="Air Jordan 3 Retro Black Cement">
                 <div class="product-info">
                     <span class="brand">ACER</span>
@@ -140,7 +149,7 @@
 
         <!-- Product 3 -->
         <div class="product-card">
-            <a href="jordan3-black-cement.html" class="product-link">
+            <a href="ip.html" class="product-link">
                 <img src="img and vids/ip162.webp" alt="Air Jordan 3 Retro Black Cement">
                 <div class="product-info">
                     <span class="brand">APPLE</span>
@@ -154,7 +163,7 @@
     
         <!-- Product 4 -->
         <div class="product-card">
-            <a href="jordan3-black-cement.html" class="product-link">
+            <a href="rtx.html" class="product-link">
                 <img src="img and vids/rtx4090.webp" alt="Air Jordan 3 Retro Black Cement">
                 <div class="product-info">
                     <span class="brand">NVIDIA</span>

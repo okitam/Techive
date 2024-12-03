@@ -103,7 +103,7 @@ body {
 .product-info h3 {
     color: #333;
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.4;   
     margin-bottom: 8px;
     font-weight: normal;
 }
@@ -576,3 +576,4 @@ body.search-active {
     text-align: left;
     margin-left: 15%;
 }
+

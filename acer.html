@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asus Tuf Gaming F15 FA507XI-LP033W</title>
+    <link rel="stylesheet" href="ip.css">
+    <style>
+       
+        .accordion-content {
+            display: none; /* Hide by default */
+            margin-top: 10px;
+        }
+
+        .accordion-content.active {
+            display: block; /* Show when active */
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-left">
+            <div class="main-image-container">
+                <img src="img and vids/aspire3.jpg" alt="Asus Tuf Gaming F15" class="main-image">
+                <button class="nav-btn prev">‹</button>
+                <button class="nav-btn next">›</button>
+            </div>
+            <div class="thumbnail-strip">
+                <img src="img and vids/acerb.jpg" class="thumbnail active" onclick="changeImage(this)">
+                <img src="img and vids/acert.jpg" class="thumbnail" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <div class="product-right">
+            <span class="brand">ACER</span>
+            <h1>Acer Aspire 3 A315HX -59-35C7</h1>
+            <div class="style-code">
+                WHITE/BLACK-GAME ROYAL-SAIL<br>
+                CZ0790-140
+            </div>
+            <div class="price">₱31,999.00</div>
+            
+            <div class="description">
+                <p class="description-title">TIMELESS STYLE ICON.</p>
+            </div>
+
+            <!-- Size Selection -->
+            <div class="size-selector">
+                <div class="size-header">
+                    <span>CHOOSE A SIZE:</span>
+                </div>
+                <div class="size-grid">
+                    <button>7</button>
+                    <button>7.5</button>
+                    <button>8</button>
+                    <button>8.5</button>
+                    <button>9</button>
+                    <button>9.5</button>
+                    <button>10</button>
+                </div>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button class="add-to-cart-btn">ADD TO CART</button>
+
+            <!-- Accordion Buttons -->
+            <div class="accordion">
+                <button class="accordion-btn">
+                    Product description
+                    <span>+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Technical Specification
+
+                        Model: Asus TUF GAMING A15 TUF GAMING FA507NU-LP081W
+                        
+                        Color: Mecha Gray
+                        
+                        Operating System: Windows 11 Home
+                        
+                        Processor: AMD Ryzen 7 7735HS Mobile Processor(8-core/16-thread, 16MB L3 cache, up to 4.7 GHz max boost)
+                        
+                        Graphics: NVIDIA GeForce RTX 4050 Laptop GPU, 2420MHz at 140W (2370MHz Boost Clock+50MHz OC, 115W+25W Dynamic Boost), 6GB GDDR6
+                        
+                        Display: 15.6-inch, FHD (1920 x 1080) 16:9, Value IPS-level, Anti-glare display, sRGB:100%, Adobe:75.35%, Refresh Rate:144Hz, G-Sync, MUX Switch + NVIDIA Advanced Optimus
+                        
+                        Memory: 16GB DDR5-4800 SO-DIMM
+                        
+                        Storage: 512GB PCIe 4.0 NVMe M.2 SSD
+                        
+                        I/O Ports
+                        1x 3.5mm Combo Audio Jack
+                        1x HDMI 2.1 FRL
+                        2x USB 3.2 Gen 1 Type-A
+                        1x USB 3.2 Gen 2 Type-C support DisplayPort / power delivery / G-SYNC
+                        1x RJ45 LAN port
+                        1x Type C USB 4 support DisplayPort / G-SYNC
+                        
+                        Keyboard and Touchpad: Backlit Chiclet Keyboard 1-Zone RGB, Touchpad
+                        
+                        Camera: 720P HD camera
+                        
+                        Audio
+                        Dolby Atmos
+                        AI noise-canceling technology
+                        Hi-Res certification
+                        Support Microsoft Cortana near field/Far field
+                        Built-in array microphone
+                        2-speaker system
+                        
+                        Network and Communication: Wi-Fi 6(802.11ax) (Dual band) 2*2 + Bluetooth 5.2 (*Bluetooth version may change with OS version different.)
+                        
+                        Battery: 90WHrs, 4S1P, 4-cell Li-ion
+                        
+                        Power Supply: 06.0, 240W AC Adapter, Output: 20V DC, 12A, 240W, Input: 100~240C AC 50/60Hz universal
+                        
+                        Weight: 2.20 Kg (4.85 lbs)
+                        
+                        Dimensions (W x D x H): 35.4 x 25.1 x 2.24 ~ 2.49 cm (13.94″ x 9.88″ x 0.88″ ~ 0.98″)</p>
+                </div>
+                <button class="accordion-btn">
+                    Shipping & Returns
+                    <span>+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Details about shipping and returns will go here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(thumbnail) {
+            const mainImage = document.querySelector('.main-image');
+            mainImage.src = thumbnail.src;
+            document.querySelectorAll('.thumbnail').forEach(img => img.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling; // Get the next sibling (the content div)
+                content.classList.toggle('active'); // Toggle the active class
+                const isActive = content.classList.contains('active');
+                button.querySelector('span').textContent = isActive ? '-' : '+';
+            });
+        });
+    </script>
+</body>
+</html>
