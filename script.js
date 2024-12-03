@@ -319,3 +319,53 @@ document.querySelectorAll('.accordion-btn').forEach(button => {
         button.querySelector('span').textContent = isActive ? '-' : '+';
     });
 });
+// Add item to cart
+function addItemToCart(item) {
+    cartItems.push({
+        id: Date.now().toString(),
+        ...item
+    });
+    updateCartDisplay();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    showNotification('Item added to cart');
+}
+// Add event listeners to "Add to Cart" buttons
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const productCard = event.target.closest('.product-card');
+        const productName = productCard.querySelector('.product-name').textContent;
+        const productPrice = productCard.querySelector('.price').textContent.replace('₱', '').replace(',', '');
+        const productImage = productCard.querySelector('img').src;
+
+        const item = {
+            name: productName,
+            price: parseFloat(productPrice),
+            image: productImage,
+            size: 'N/A' // You can modify this if you have size options
+        };
+
+        addItemToCart(item);
+    });
+});
+
+// Function to filter products based on search input
+function filterProducts() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        const productName = card.querySelector('.product-name').textContent.toLowerCase();
+        const brandName = card.querySelector('.brand').textContent.toLowerCase();
+        
+        if (productName.includes(searchInput) || brandName.includes(searchInput)) {
+            card.style.display = ''; // Show the card
+        } else {
+            card.style.display = 'none'; // Hide the card
+        }
+    });
+}
+// Function to show the shipping image
+function showShippingImage() {
+    const shippingImageContainer = document.getElementById('shippingImageContainer');
+    shippingImageContainer.style.display = 'block'; // Show the image container
+}

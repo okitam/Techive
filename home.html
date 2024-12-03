@@ -70,17 +70,17 @@
 
     <!---- Search Overlay -->
    
-<div class="search-popup" id="searchOverlay">
-    <div class="search-container">
-        <div class="search-input-wrapper">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search" id="searchInput" autofocus>
+    <div class="search-popup" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search" id="searchInput" autofocus oninput="filterProducts()">
+            </div>
+            <button class="close-search" onclick="toggleSearch()">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <button class="close-search" onclick="toggleSearch()">
-            <i class="fas fa-times"></i>
-        </button>
     </div>
-</div>
 
     <!-- Cart Modal -->
 
