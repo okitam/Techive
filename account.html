@@ -11,56 +11,57 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo">
-        <a href="home.html">
-            <img src="images/Logo.png" alt="Logo">
-        </a>
-    </div>
-    
-    <div class="nav-links">
-        <a href="home.html">HOME</a>
-        <a href="#">LAPTOP </a>
-        <a href="#">DESKTOP </a>
-        <a href="#">SMARTPHONES </a>
-        <a href="#">BRANDS</a>
-    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="home.html">
+                <img src="images/Logo.png" alt="Logo">
+            </a>
+        </div>
+        
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="#">LAPTOP</a>
+            <a href="#">DESKTOP</a>
+            <a href="#">SMARTPHONES</a>
+            <a href="#">BRANDS</a>
+        </div>
 
-    <div class="nav-icons">
-        <a href="#" onclick="toggleSearch(event)"><i class="fas fa-search"></i></a>
-        <a href="#" class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-        </a>
-        <a href="account.html"><i class="fas fa-user"></i></a>
-    </div>
-</nav>
+        <div class="nav-icons">
+            <a href="#" onclick="toggleSearch(event)"><i class="fas fa-search"></i></a>
+            <a href="#" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <a href="account.html"><i class="fas fa-user"></i></a>
+        </div>
+    </nav>
 
     <!-- Account Content -->
     <div class="account-container">
         <div class="account-header">
-            <h1>MY ACCOUNT</h1>
+            <h1>My Account</h1>
             <a href="#" onclick="logout()" class="logout-link">Logout</a>
         </div>
 
         <div class="account-content">
-            <div class="order-section">
-                <h2>ORDER HISTORY</h2>
-                <p class="no-orders">You haven't placed any orders yet.</p>
-            </div>
-
             <div class="info-section">
-                <div class="account-info">
-                    <h2>ACCOUNT INFORMATION</h2>
-                    <p id="userName">Edgar Jerald Toledo</p>
-                    <p id="userEmail">edgarjerald19@gmail.com</p>
+                <h2>Account Information</h2>
+                <div class="info-item">
+                    <label for="userName">Username:</label>
+                    <input type="text" id="userName" value="yANCHU" />
                 </div>
-
-                <div class="address-info">
-                    <h2>DEFAULT ADDRESS</h2>
-                    <p id="addressName">Edgar Jerald Toledo</p>
-                    <p id="userCountry">Philippines</p>
-                    <a href="#" class="view-addresses">View Addresses (1)</a>
+                <div class="info-item">
+                    <label for="userEmail">Email ID:</label>
+                    <input type="email" id="userEmail" value="yanchu@gmail.com" />
                 </div>
+                <div class="info-item">
+                    <label for="userPhone">Phone Number:</label>
+                    <input type="tel" id="userPhone" value="+4087988099" />
+                </div>
+                <div class="info-item">
+                    <label for="userPassword">Password:</label>
+                    <input type="password" id="userPassword" value="evfTbyVVCd" />
+                </div>
+                <button class="update-button">Update</button>
             </div>
         </div>
     </div>
