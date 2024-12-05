@@ -176,6 +176,27 @@ h1 {
     border-color: #000;
 }
 
+/* ... existing CSS ... */
+
+/* Return to Store Button */
+.return-to-store-btn {
+    width: 100%;
+    padding: 18px;
+    background: #000;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.2s ease;
+}
+
+.return-to-store-btn:hover {
+    background: #333;
+}
+
+
 .add-to-cart-btn {
     width: 100%;
     padding: 18px;
@@ -254,3 +275,4 @@ h1 {
 .main-image-container:hover .main-image {
     transform: scale(1.2); /* Scale the image to 120% on hover */
 }
+

@@ -54,12 +54,12 @@ body {
 }
 
 .thumbnail {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: 2px solid #e5e5e5;
     cursor: pointer;
-    margin-left: 10%;
+    margin-left: 3%;
 }
 
 .thumbnail.active {
