@@ -172,26 +172,23 @@ body {
 }
 
 .cart-dropdown {
-    display: none; /* Hidden by default */
-    position: absolute; /* Position it below the cart icon */
-    background-color: white; /* Background color */
-    border: 1px solid #ccc; /* Border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    z-index: 1000; /* Make sure it's on top */
-    padding: 10px; /* Padding */
-    width: 200px; /* Width of the dropdown */
+    display: none; 
+    position: absolute; 
+    background-color: white; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    padding: 10px;
+    width: 200px; 
 }
 
 .nav-icons .cart-icon {
-    position: relative; /* Position relative for dropdown positioning */
+    position: relative; 
 }
 
 .nav-icons .cart-icon:hover .cart-dropdown {
-    display: block; /* Show dropdown on hover */
+    display: block; 
 }
-
-/* Add these new styles to your existing CSS */
-
 .cart-modal {
     position: fixed;
     top: 0;
@@ -313,10 +310,9 @@ body {
     display: none;
 }
 
-/* Replace the search overlay styles with these */
 .search-popup {
     position: fixed;
-    top: -100px; /* Start above the viewport */
+    top: -100px; 
     left: 0;
     width: 100%;
     background-color: white;
@@ -327,9 +323,8 @@ body {
 }
 
 .search-popup.active {
-    top: 0; /* Slide down to top of viewport */
+    top: 0;
 }
-
 .search-container {
     max-width: 800px;
     margin: 0 auto;
@@ -337,7 +332,6 @@ body {
     align-items: center;
     padding: 0 20px;
 }
-
 .search-input-wrapper {
     display: flex;
     align-items: center;
@@ -373,12 +367,10 @@ body {
     color: #000;
 }
 
-/* Add this to push down the content when search is active */
 body.search-active {
-    padding-top: 80px; /* Adjust this value based on your search popup height */
+    padding-top: 80px; 
 }
 
-/* Add these styles for the dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -424,15 +416,6 @@ body.search-active {
     display: block;
 }
 
-/* Optional: Add a small arrow indicator */
-.dropdown-trigger::after {
-    content: '▼';
-    font-size: 8px;
-    margin-left: 5px;
-    vertical-align: middle;
-}
-
-/* Optional: Animation for smooth appearance */
 .dropdown-content {
     opacity: 0;
     transform: translateY(-10px);
@@ -447,56 +430,56 @@ body.search-active {
 }
 
 .banner-title {
-    text-align: center; /* Center align the title */
-    font-size: 30px; /* Font size for the title */
-    font-weight: bold; /* Bold text */
-    color: black; /* Text color */
-    margin: 20px 0; /* Margin for spacing */
+    text-align: center; 
+    font-size: 30px;
+    font-weight: bold;
+    color: black; 
+    margin: 20px 0; 
     
 }
 
 .buy-now-btn {
     position: absolute;
-    display: inline-block; /* Make the button inline */
-    background-color: black; /* Button background color */
-    color: white; /* Text color */
-    padding: 20px 30px; /* Padding for button */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    font-size: 17px; /* Font size */
-    transition: background-color 0.3s; /* Smooth transition */
-    position: relative; /* Position relative to allow for z-index */
-    z-index: 1; /* Ensure button is above other elements */
+    display: inline-block; 
+    background-color: black; 
+    color: white; 
+    padding: 20px 30px; 
+    border: none; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-size: 17px; 
+    transition: background-color 0.3s; 
+    position: relative; 
+    z-index: 1; 
     margin-top: -100px;
 }
 
 .buy-now-btn:hover {
-    background-color: #333; /* Darker background on hover */
+    background-color: #333; 
 }
 
 .banner {
     position: relative;
-    height: 600px; /* Set the height of the banner */
-    overflow: visible; /* Hide any overflow */
-    position: relative; /* Position relative for absolute positioning of video */
-    text-align: center; /* Center align text */
+    height: 600px; 
+    overflow: visible;
+    position: relative; 
+    text-align: center; 
 }
 
 .banner video {
-    width: 100%; /* Make the video responsive */
-    height: 100%; /* Fill the banner height */
-    object-fit: cover; /* Cover the entire area */
-    position: absolute; /* Position the video absolutely */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
     top: 0;
     left: 0;
 }
 
 .tagline {
-    font-size: 11px; /* Adjust the font size */
-    color: #000000; /* Change the color as desired */
-    text-align: center; /* Center the tagline */
-    margin-top: -13px; /* Add some space above the tagline */
+    font-size: 11px; 
+    color: #000000; 
+    text-align: center; 
+    margin-top: -13px; 
     margin-bottom: 40px;
 }
 

@@ -14,11 +14,11 @@
             <!-- Logo -->
             <div class="logo">
                 <a href="index.html">
-                    <img src="path-to-your-logo.png" alt="TECHIVE Logo">
+                    <img src="img and vids/logofinal.png" alt="TECHIVE Logo">
                 </a>
             </div>
 
-            <!-- Breadcrumb Navigation -->
+            <!--  Breadcrumb-->
             <div class="breadcrumb">
                 <span>Cart</span> > 
                 <span class="active">Information</span> > 
@@ -93,8 +93,7 @@
                 </div>
                 <div class="form-group">
                     <select id="region" required>
-                        <option value="">Region</option>
-                        <!-- Add Philippines regions here -->
+                        <option value="">Region</option>         
                     </select>
                 </div>
                 <div class="form-group">
@@ -111,8 +110,7 @@
 
         <!-- Right Side - Cart Summary -->
         <div class="checkout-right">
-            <div class="cart-items" id="checkoutCartItems">
-                <!-- Cart items will be dynamically inserted here -->
+            <div class="cart-items" id="checkoutCartItems">           
             </div>
             
             <div class="checkout-summary">
@@ -148,14 +146,9 @@
             </button>
         </div>
     </div>
-
-    <!-- Footer -->
     <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
     <script src="script.js"></script>
     <script>
-        // Load footer
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {

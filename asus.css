@@ -176,8 +176,6 @@ h1 {
     border-color: #000;
 }
 
-/* ... existing CSS ... */
-
 /* Return to Store Button */
 .return-to-store-btn {
     width: 100%;
@@ -236,7 +234,6 @@ h1 {
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .product-container {
         flex-direction: column;
@@ -262,17 +259,17 @@ h1 {
 }
 
 .main-image-container {
-    overflow: hidden; /* Hide overflow to prevent the image from going outside the container */
-    position: relative; /* Position relative for the buttons */
+    overflow: hidden; 
+    position: relative; 
 }
 
 .main-image {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+    transition: transform 0.3s ease; 
 }
 
 .main-image-container:hover .main-image {
-    transform: scale(1.2); /* Scale the image to 120% on hover */
+    transform: scale(1.2); 
 }
 

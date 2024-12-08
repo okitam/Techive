@@ -241,16 +241,16 @@ h1 {
 }
 
 .main-image-container {
-    overflow: hidden; /* Hide overflow to prevent the image from going outside the container */
-    position: relative; /* Position relative for the buttons */
+    overflow: hidden; 
+    position: relative; 
 }
 
 .main-image {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease; /* Smooth transition for the zoom effect */
+    transition: transform 0.3s ease; 
 }
 
 .main-image-container:hover .main-image {
-    transform: scale(1.2); /* Scale the image to 120% on hover */
+    transform: scale(1.2); 
 }

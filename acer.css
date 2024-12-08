@@ -16,8 +16,6 @@ body {
     display: flex;
     gap: 60px;
 }
-
-/* Left Side - Images */
 .product-left {
     flex: 1;
     max-width: 60%;
