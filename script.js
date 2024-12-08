@@ -40,7 +40,7 @@ function toggleCart(event) {
     cartModal.classList.toggle('active');
 }
 
-// Update cart display
+// cart display
 function updateCartDisplay() {
     const cartItemsList = document.getElementById('cartItemsList');
     const cartCounter = document.getElementById('cartCounter');
@@ -48,11 +48,11 @@ function updateCartDisplay() {
     
     if (!cartItemsList) return; // Exit if not on a page with cart display
     
-    // Update counter
+    // counter
     cartCounter.textContent = cartItems.length;
     cartCounter.style.display = cartItems.length === 0 ? 'none' : 'block';
     
-    // Update cart items list
+    // cart items list
     if (cartItems.length > 0) {
         let total = 0;
         cartItemsList.innerHTML = cartItems.map(item => {
@@ -84,7 +84,7 @@ function displayCheckoutItems() {
     const totalAmount = document.getElementById('totalAmount');
     const itemCount = document.getElementById('itemCount');
     
-    if (!checkoutCartItems) return; // Exit if not on checkout page
+    if (!checkoutCartItems) return;
     
     if (cartItems.length > 0) {
         let total = 0;
@@ -168,7 +168,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Click outside handlers
 document.addEventListener('click', function(event) {
     const searchOverlay = document.getElementById('searchOverlay');
     const searchInput = document.getElementById('searchInput');
@@ -219,11 +218,6 @@ function logout() {
     localStorage.removeItem('userData');
     window.location.href = 'index.html';
 }
-
-// Update your profile icon click handler in the HTML
-// Keep all your existing code and add/update these functions
-
-// Handle profile icon click - simplified version
 function goToAccount() {
     window.location.href = 'account.html';
 }
@@ -232,7 +226,6 @@ function goToAccount() {
 function loadUserData() {
     const userData = JSON.parse(localStorage.getItem('userData'));
     if (!userData) {
-        // If no user data, create default data
         const defaultUser = {
             name: 'Edgar Jerald Toledo',
             email: 'edgarjerald19@gmail.com',
@@ -258,12 +251,10 @@ function displayUserData(userData) {
 
 // Logout function
 function logout() {
-    // Keep cart items but remove user data
     localStorage.removeItem('userData');
     window.location.href = 'index.html';
 }
 
-// Add this to your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
     const savedCart = localStorage.getItem('cartItems');
     if (savedCart) {
@@ -274,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Add this line to load user data if on account page
+    //load user data if on account page
     if (window.location.pathname.includes('account.html')) {
         loadUserData();
     }
@@ -341,14 +332,14 @@ document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             name: productName,
             price: parseFloat(productPrice),
             image: productImage,
-            size: 'N/A' // You can modify this if you have size options
+            size: 'N/A' 
         };
 
         addItemToCart(item);
     });
 });
 
-// Function to filter products based on search input
+// to filter products based on search input
 function filterProducts() {
     const searchInput = document.getElementById('searchInput').value.toLowerCase();
     const productCards = document.querySelectorAll('.product-card');
@@ -364,7 +355,7 @@ function filterProducts() {
         }
     });
 }
-// Function to show the shipping image
+
 function showShippingImage() {
     const shippingImageContainer = document.getElementById('shippingImageContainer');
     shippingImageContainer.style.display = 'block'; // Show the image container
