@@ -197,7 +197,7 @@ function goToAccount() {
     if (userData) {
         window.location.href = 'account.html';
     } else {
-        window.location.href = 'index.html'; // or your login page
+        window.location.href = 'index.html'; 
     }
 }
 
@@ -304,8 +304,8 @@ document.querySelectorAll('.accordion-header').forEach(header => {
 
 document.querySelectorAll('.accordion-btn').forEach(button => {
     button.addEventListener('click', () => {
-        const content = button.nextElementSibling; // Get the next sibling (the content div)
-        content.classList.toggle('active'); // Toggle the active class
+        const content = button.nextElementSibling; 
+        content.classList.toggle('active'); 
         const isActive = content.classList.contains('active');
         button.querySelector('span').textContent = isActive ? '-' : '+';
     });
@@ -358,5 +358,5 @@ function filterProducts() {
 
 function showShippingImage() {
     const shippingImageContainer = document.getElementById('shippingImageContainer');
-    shippingImageContainer.style.display = 'block'; // Show the image container
+    shippingImageContainer.style.display = 'block'; 
 }
